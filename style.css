@@ -228,7 +228,7 @@ section.savedTaskContainer {
 section.savedTaskContainer > header {
   width: 80%;
   margin: 1rem auto;
-  padding: 1.25rem;
+  padding: 0.25rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -239,6 +239,11 @@ section.savedTaskContainer > header {
 section.savedTaskContainer > header > h2 {
   font-size: 1.25rem;
   font-weight: 500;
+}
+
+section.savedTaskContainer > header > svg {
+  width: 20px;
+  height: 20px;
 }
 
 section.savedTaskContainer > span {
@@ -467,6 +472,10 @@ div.savedTaskButtons > div.taskButtons > svg {
     font-size: 1rem;
   }
 
+  section.savedTaskContainer > header {
+    padding: 1.25rem;
+  }
+
   section.savedTaskContainer > header > h2 {
     font-size: 1.5rem;
   }
@@ -560,6 +569,7 @@ div.savedTaskButtons > div.taskButtons > svg {
 
   section.savedTaskContainer > header {
     width: 70%;
+    padding: 1.25rem;
   }
 
   section.savedTaskContainer > header > h2 {
@@ -655,6 +665,7 @@ div.savedTaskButtons > div.taskButtons > svg {
 
   section.savedTaskContainer > header {
     width: 70%;
+    padding: 1.25rem;
   }
 
   section.savedTaskContainer > header > h2 {
