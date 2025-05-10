@@ -47,6 +47,16 @@ header {
   font-weight: 500;
 }
 
+header > svg.lucide-notebook-tabs {
+  width: 28px;
+  height: 28px;
+  align-self: center;
+}
+
+header > span {
+  align-self: center;
+}
+
 main {
   width: 80%;
   margin-inline: auto;
@@ -72,6 +82,7 @@ div.newTaskWrapper:hover div.taskButtons {
 }
 
 input.taskTitle {
+  width: 100%;
   padding-inline: 1rem;
   background-color: transparent;
   color: var(--base-color);
@@ -109,12 +120,16 @@ li.taskListItem:hover svg.lucide-x {
 }
 
 svg.lucide-plus {
+  width: 18px;
+  height: 18px;
   flex: 18px;
   margin: 0.25rem;
 }
 
 svg.lucide-square {
   display: none;
+  width: 20px;
+  height: 20px;
   flex: 20px;
   align-self: flex-start;
   margin: 0.45rem 0.25rem;
@@ -123,6 +138,8 @@ svg.lucide-square {
 
 svg.lucide-square-check {
   display: none;
+  width: 20px;
+  height: 20px;
   flex: 20px;
   align-self: flex-start;
   margin: 0.45rem 0.25rem;
@@ -157,6 +174,8 @@ div.removeBtnWrapper {
 }
 
 svg.lucide-x {
+  width: 24px;
+  height: 24px;
   display: none;
   padding: 0.25rem;
   border-radius: 2rem;
@@ -191,6 +210,8 @@ div.taskButtons:hover {
 }
 
 div.taskButtons > svg {
+  width: 32px;
+  height: 32px;
   padding: 0.25rem;
   vertical-align: middle;
   border-radius: 2.25rem;
@@ -207,7 +228,7 @@ section.savedTaskContainer {
 section.savedTaskContainer > header {
   width: 80%;
   margin: 1rem auto;
-  padding: 0.5rem;
+  padding: 1.25rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -250,6 +271,11 @@ div.savedTaskWrapper {
 
 div.savedTaskButtons > div.taskButtons {
   display: block;
+}
+
+div.savedTaskButtons > div.taskButtons > svg {
+  width: 30px;
+  height: 30px;
 }
 
 /* Media Queries */
@@ -302,7 +328,6 @@ div.savedTaskButtons > div.taskButtons {
   }
 
   input.taskTitle {
-    flex: 1 1 60%;
     font-size: 1.5rem;
   }
 
@@ -321,6 +346,47 @@ div.savedTaskButtons > div.taskButtons {
   textarea.checkboxText {
     font-size: 1rem;
   }
+
+  svg.lucide-plus {
+    width: 22px;
+    height: 22px;
+    flex: 22px;
+  }
+
+  svg.lucide-square {
+    width: 24px;
+    height: 24px;
+    flex: 24px;
+  }
+
+  svg.lucide-square-check {
+    width: 24px;
+    height: 24px;
+    flex: 24px;
+  }
+
+  div.removeBtnWrapper {
+    flex: 28px;
+  }
+
+  svg.lucide-x {
+    width: 28px;
+    height: 28px;
+  }
+
+  div.taskButtons {
+    margin-inline: 0.5rem;
+  }
+
+  div.taskButtons > svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  div.savedTaskButtons > div.taskButtons > svg {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 /*  min-width 1024px */
@@ -334,6 +400,11 @@ div.savedTaskButtons > div.taskButtons {
     font-size: 2.2rem;
   }
 
+  header > svg.lucide-notebook-tabs {
+    width: 34px;
+    height: 34px;
+  }
+
   div.newTaskWrapper,
   div.savedTaskWrapper {
     padding: 2rem;
@@ -343,16 +414,66 @@ div.savedTaskButtons > div.taskButtons {
     font-size: 1.75rem;
   }
 
+  li.taskListItem {
+    padding: 0.85rem;
+  }
+
   textarea.checkboxText {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
+  }
+
+  svg.lucide-plus {
+    width: 22px;
+    height: 22px;
+    flex: 22px;
+  }
+
+  svg.lucide-square {
+    width: 24px;
+    height: 24px;
+    flex: 24px;
+  }
+
+  svg.lucide-square-check {
+    width: 24px;
+    height: 24px;
+    flex: 24px;
+  }
+
+  div.removeBtnWrapper {
+    flex: 28px;
+  }
+
+  svg.lucide-x {
+    width: 28px;
+    height: 28px;
+  }
+
+  div.taskButtons {
+    margin-inline: 0.5rem;
+  }
+
+  div.taskButtons > svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  div.savedTaskButtons > div.taskButtons > svg {
+    width: 36px;
+    height: 36px;
   }
 
   section.savedTaskContainer > span {
     font-size: 1rem;
   }
 
-  section.savedTaskContainer > header {
-    font-size: 1.75rem;
+  section.savedTaskContainer > header > h2 {
+    font-size: 1.5rem;
+  }
+
+  section.savedTaskContainer > header > svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -369,6 +490,11 @@ div.savedTaskButtons > div.taskButtons {
     margin-inline: auto;
   }
 
+  header > svg.lucide-notebook-tabs {
+    width: 34px;
+    height: 34px;
+  }
+
   div.newTaskWrapper,
   div.savedTaskWrapper {
     width: 70%;
@@ -379,8 +505,53 @@ div.savedTaskButtons > div.taskButtons {
     font-size: 1.75rem;
   }
 
+  li.taskListItem {
+    padding: 0.85rem;
+  }
+
   textarea.checkboxText {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
+  }
+
+  svg.lucide-plus {
+    width: 24px;
+    height: 24px;
+    flex: 24px;
+  }
+
+  svg.lucide-square {
+    width: 28px;
+    height: 28px;
+    flex: 28px;
+  }
+
+  svg.lucide-square-check {
+    width: 28px;
+    height: 28px;
+    flex: 28px;
+  }
+
+  div.removeBtnWrapper {
+    flex: 30px;
+  }
+
+  svg.lucide-x {
+    width: 30px;
+    height: 30px;
+  }
+
+  div.taskButtons {
+    margin-inline: 0.5rem;
+  }
+
+  div.taskButtons > svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  div.savedTaskButtons > div.taskButtons > svg {
+    width: 36px;
+    height: 36px;
   }
 
   ssection.savedTaskContainer > span {
@@ -389,13 +560,21 @@ div.savedTaskButtons > div.taskButtons {
 
   section.savedTaskContainer > header {
     width: 70%;
-    font-size: 1.75rem;
+  }
+
+  section.savedTaskContainer > header > h2 {
+    font-size: 1.5rem;
+  }
+
+  section.savedTaskContainer > header > svg {
+    width: 28px;
+    height: 28px;
   }
 }
 
 @media (min-width: 1440px) {
   body {
-    width: 60%;
+    width: 50%;
     font-size: 18px;
   }
 
@@ -405,6 +584,12 @@ div.savedTaskButtons > div.taskButtons {
     margin-inline: auto;
   }
 
+  header > svg.lucide-notebook-tabs {
+    width: 34px;
+    height: 34px;
+    align-self: center;
+  }
+
   div.newTaskWrapper,
   div.savedTaskWrapper {
     width: 70%;
@@ -415,8 +600,53 @@ div.savedTaskButtons > div.taskButtons {
     font-size: 1.75rem;
   }
 
+  li.taskListItem {
+    padding: 0.75rem;
+  }
+
   textarea.checkboxText {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
+  }
+
+  svg.lucide-plus {
+    width: 28px;
+    height: 28px;
+    flex: 28px;
+  }
+
+  svg.lucide-square {
+    width: 26px;
+    height: 26px;
+    flex: 26px;
+  }
+
+  svg.lucide-square-check {
+    width: 26px;
+    height: 26px;
+    flex: 26px;
+  }
+
+  div.removeBtnWrapper {
+    flex: 30px;
+  }
+
+  svg.lucide-x {
+    width: 30px;
+    height: 30px;
+  }
+
+  div.taskButtons {
+    margin-inline: 0.5rem;
+  }
+
+  div.taskButtons > svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  div.savedTaskButtons > div.taskButtons > svg {
+    width: 36px;
+    height: 36px;
   }
 
   section.savedTaskContainer > span {
@@ -425,6 +655,14 @@ div.savedTaskButtons > div.taskButtons {
 
   section.savedTaskContainer > header {
     width: 70%;
-    font-size: 2rem;
+  }
+
+  section.savedTaskContainer > header > h2 {
+    font-size: 1.5rem;
+  }
+
+  section.savedTaskContainer > header > svg {
+    width: 28px;
+    height: 28px;
   }
 }
