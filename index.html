@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Todo</title>
+    <link href="style.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#00adb5"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="lucide lucide-notebook-tabs-icon lucide-notebook-tabs"
+      >
+        <path d="M2 6h4" />
+        <path d="M2 10h4" />
+        <path d="M2 14h4" />
+        <path d="M2 18h4" />
+        <rect width="16" height="20" x="4" y="2" rx="2" />
+        <path d="M15 2v20" />
+        <path d="M15 7h5" />
+        <path d="M15 12h5" />
+        <path d="M15 17h5" />
+      </svg>
+      <span>Todo</span>
+    </header>
+
+    <main>
+      <div class="taskContainer newTaskWrapper">
+        <div class="taskInputContainer">
+          <input
+            type="text"
+            name="taskTitle"
+            class="taskTitle"
+            placeholder="Title"
+            maxlength="30"
+          />
+
+          <ul class="taskList">
+            <li class="taskListItem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#888"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-plus-icon lucide-plus"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5v14" />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#eeeeee"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-square-icon lucide-square"
+              >
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="#222831"
+                stroke="#eeeeee"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-square-check-icon lucide-square-check checkedIcon"
+              >
+                <rect
+                  width="18"
+                  height="18"
+                  x="3"
+                  y="3"
+                  rx="2"
+                  class="checkedIcon"
+                />
+                <path d="m9 12 2 2 4-4" class="checkedIcon" />
+              </svg>
+              <textarea placeholder="Add task..." id="task1" name="checkboxText" class="checkboxText" rows="1"></textarea>
+              <div title="Remove Task" class="removeBtnWrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#eeeeee"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-x-icon lucide-x"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="taskButtonWrapper">
+          <div title="Add Task" class="addBtnWrapper taskButtons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="#222831"
+              stroke="#00adb5"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-circle-plus-icon lucide-circle-plus"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 12h8" />
+              <path d="M12 8v8" />
+            </svg>
+          </div>
+
+          <div title="Save Task" class="saveBtnWrapper taskButtons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="#222831"
+              stroke="#888"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-circle-check-icon lucide-circle-check"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+
+          <div title="Dismiss" class="closeBtnWrapper taskButtons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="#222831"
+              stroke="#888"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-circle-x-icon lucide-circle-x"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="m15 9-6 6" />
+              <path d="m9 9 6 6" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <section class="savedTaskContainer">
+      <header>
+        <h2>Saved Task</h2>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-save-icon lucide-save"><path d="M15.2 3a2 2 0 0 1 1.4.6l3.8 3.8a2 2 0 0 1 .6 1.4V19a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2z"/><path d="M17 21v-7a1 1 0 0 0-1-1H8a1 1 0 0 0-1 1v7"/><path d="M7 3v4a1 1 0 0 0 1 1h7"/></svg>
+      </header>
+      <span>No saved tasks yet</span>
+    </section>
+    
+
+    <template id="taskTemplate">
+      <li class="taskListItem">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#888"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-plus-icon lucide-plus"
+        >
+          <path d="M5 12h14" />
+          <path d="M12 5v14" />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#eeeeee"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-square-icon lucide-square"
+        >
+          <rect width="18" height="18" x="3" y="3" rx="2" />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="#222831"
+          stroke="#eeeeee"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="lucide lucide-square-check-icon lucide-square-check checkedIcon"
+        >
+          <rect width="18" height="18" x="3" y="3" rx="2" class="checkedIcon" />
+          <path d="m9 12 2 2 4-4" class="checkedIcon" />
+        </svg>
+        <textarea placeholder="Add task..." name="checkboxText" class="checkboxText" rows="1"></textarea>
+        <div title="Remove Task" class="removeBtnWrapper">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#eeeeee"
+            stroke-width="2.5"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="lucide lucide-x-icon lucide-x"
+          >
+            <path d="M18 6 6 18" />
+            <path d="m6 6 12 12" />
+          </svg>
+        </div>
+      </li>
+    </template>
+    <template id="savedTaskTemplate">
+      <div class="taskContainer savedTaskWrapper">
+        <div class="taskInputContainer savedTask">
+          <input
+            type="text"
+            name="taskTitle"
+            class="taskTitle"
+            placeholder="Title"
+            maxlength="30"
+          />
+
+          <ul class="taskList">
+            <li class="taskListItem">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#888"
+                stroke-width="2.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-plus-icon lucide-plus"
+              >
+                <path d="M5 12h14" />
+                <path d="M12 5v14" />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#eeeeee"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-square-icon lucide-square"
+              >
+                <rect width="18" height="18" x="3" y="3" rx="2" />
+              </svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="#222831"
+                stroke="#eeeeee"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="lucide lucide-square-check-icon lucide-square-check checkedIcon"
+              >
+                <rect
+                  width="18"
+                  height="18"
+                  x="3"
+                  y="3"
+                  rx="2"
+                  class="checkedIcon"
+                />
+                <path d="m9 12 2 2 4-4" class="checkedIcon" />
+              </svg>
+              <span class="taskText">Add task...</span>
+              <div title="Remove Task" class="removeBtnWrapper">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="#eeeeee"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-x-icon lucide-x"
+                >
+                  <path d="M18 6 6 18" />
+                  <path d="m6 6 12 12" />
+                </svg>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="taskButtonWrapper savedTaskButtons">
+          <div title="Add Task" class="addBtnWrapper taskButtons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#eeeeee"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-circle-plus-icon lucide-circle-plus"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="M8 12h8" />
+              <path d="M12 8v8" />
+            </svg>
+          </div>
+
+          <div title="Save Task" class="saveBtnWrapper taskButtons">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#eeeeee"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-circle-check-icon lucide-circle-check"
+            >
+              <circle cx="12" cy="12" r="10" />
+              <path d="m9 12 2 2 4-4" />
+            </svg>
+          </div>
+          <div title="Delete Task" class="deleteBtnWrapper taskButtons">
+            <svg 
+              xmlns="http://www.w3.org/2000/svg" 
+              width="32"
+              height="32"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#eeeeee"
+              stroke-width="2" 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              class="lucide lucide-trash-icon lucide-trash">
+            <path d="M3 6h18"/>
+            <path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/>
+            <path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/>
+          </svg>
+          </div>
+        </div>
+    </template>
+
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
